@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Guia de Exame de Sangue</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Calibri:wght@300;400&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Calibri', sans-serif;
+            font-weight: 300;
+        }
+        .container {
+            width: 21cm; /* A4 width */
+            padding: 10px; /* Reduced padding */
+            margin: 10px auto; /* Reduced margin */
+            box-sizing: border-box;
+            border: 1px solid #000;
+            page-break-inside: avoid; /* Prevent page break inside the container */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
+        }
+        .header img {
+            max-width: 60px; /* Adjusted size */
+            margin-left: 10px; /* Adjusted margin */
+            margin-right: 5px; /* Adjusted margin */
+        }
+        .header div {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header h1 {
+            margin: 1px 0; /* Reduced margin */
+            line-height: 1.2;
+            font-size: 12pt; /* Reduced font size */
+            font-weight: bold;
+        }
+        .header h2 {
+            margin: 1px 0; /* Reduced margin */
+            line-height: 1.2;
+            font-size: 10pt; /* Reduced font size */
+            font-weight: bold;
+        }
+        .header p {
+            margin: 1px 0; /* Reduced margin */
+            line-height: 1.2;
+            font-size: 8pt; /* Reduced font size */
+        }
+        .content h2 {
+            text-align: center;
+            margin: 10px 0; /* Reduced margin */
+            font-size: 10pt; /* Reduced font size */
+            font-weight: bold;
+        }
+        .content p {
+            margin: 3px 0; /* Reduced margin */
+            line-height: 1.5;
+            font-size: 8pt; /* Reduced font size */
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 10px; /* Reduced margin */
+        }
+        .section-title {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            padding: 3px; /* Reduced padding */
+            border: 1px solid #000;
+            margin-bottom: 5px; /* Reduced margin */
+            font-size: 8pt; /* Reduced font size */
+            text-align: center; /* Center align the section titles */
+        }
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row > div, .flex-column > div {
+            flex: 1;
+            margin-right: 5px; /* Reduced margin */
+            font-size: 8pt; /* Reduced font size */
+        }
+        .flex-row > div:last-child, .flex-column > div:last-child {
+            margin-right: 0;
+        }
+        .signature-section {
+            margin-top: 5px; /* Reduced margin */
+            border-top: 1px solid #000;
+            padding-top: 20px; /* Reduced padding */
+            text-align: center;
+        }
+        .small-text {
+            font-size: 8pt;
+            text-align: center;
+        }
+        .footer {
+            font-size: 8pt;
+            text-align: center;
+            margin-top: 10px; /* Reduced margin */
+        }
+        .procedures {
+            display: flex;
+            flex-direction: column; /* Single column for procedures */
+        }
+        .procedure-item {
+            width: 100%; /* Single column */
+            box-sizing: border-box;
+            padding: 2px 5px; /* Adjust padding for better fit */
+        }
+        @media print {
+            body, .container {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                page-break-inside: avoid;
+            }
+        }
+        .spacer {
+            margin-bottom: 5px; /* Reduced margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../../assets/img/logo.png" alt="Logo Prefeitura">
+            <div>
+                <h1>PREFEITURA MUNICIPAL DE BANDEIRA DO SUL</h1>
+                <h2>SECRETARIA MUNICIPAL DE SAÚDE</h2>
+                <p>Rua João Botelho Muniz, 71, Centro – BANDEIRA DO SUL – (35) 3742-1291 / (35) 991840143</p>
+                <p>SUS - Sistema Único de Saúde / Contratos estabelecidos com prestadores</p>
+            </div>
+            <img src="../../assets/img/sus.jpg" alt="Logo SUS">
+        </div>
+        <div class="content">
+            <h2>AUTORIZAÇÃO PARA EXAMES LABORATORIAIS - PROTOCOLO Nº: ${Protocolo}</h2>
+            <div class="section">
+                <div class="section-title">DADOS DO AUTORIZADOR</div>
+                <div class="flex-row">
+                    <div><span class="bold">Emitido por:</span> ${nomeusuario}</div>
+                    <div><span class="bold">Contato:</span> ${Contatousuario}</div>
+                </div>
+                <div class="flex-row">
+                    <div><span class="bold">Organização:</span> ${estabelecimentousuario}</div>
+                    <div><span class="bold">CNES:</span> ${cnesusuario}</div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">DADOS DO PACIENTE</div>
+                <div class="flex-row">
+                    <div><span class="bold">Nome:</span> ${NomePaciente}</div>
+                    <div><span class="bold">CPF:</span> ${CPF}</div>
+                </div>
+                <div class="flex-row">
+                    <div><span class="bold">CNS:</span> ${CNS}</div>
+                    <div><span class="bold">Data N.:</span> ${DataNascimento}</div>
+                </div>
+                <div class="flex-row">
+                    <div><span class="bold">Nome da mãe:</span> ${NomeMae}</div>
+                    <div><span class="bold">Contato:</span> ${Telefone}</div>
+                </div>
+                <div class="flex-row">
+                    <div><span class="bold">Endereço:</span> ${Endereco}</div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">SOLICITAÇÃO/AUTORIZAÇÃO</div>
+                <div class="procedures">
+                    <!-- Example of how to include procedure items -->
+                 
+                    <div class="procedure-item">
+                        <span class="bold">Exames</span>
+                    </div>
+                    <!-- Add more procedures as needed -->
+                    ${Exames}
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">LOCAL DE ATENDIMENTO</div>
+                <div class="flex-row">
+                    <div><span class="bold">Nome:</span> ${nomeprestador}</div>
+                    <div class="spacer"></div> <!-- Adding space -->
+                    <div><span class="bold">CNPJ:</span> ${cnpjprestador}</div>
+                </div>
+                <div class="flex-row">
+                    <div><span class="bold">Endereço:</span> ${enderecoprestador}</div>
+                </div>
+            </div>
+            <div class="signature-section">
+                <div>______________________________<br>Assinatura do Autorizador</div>
+                <div class="small-text">${NomeAtendente} | Data: ${data}</div>
+                <div class="small-text">Secretaria Municipal de Saúde de Bandeira do Sul / MG</div>
+            </div>
+            <div class="footer">
+                <p>ESTE DOCUMENTO É PESSOAL E INTRANSFERÍVEL - SOMENTE SERÁ VÁLIDO COM CARIMBO EXCLUSIVO DA SMS!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

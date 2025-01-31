@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento de Ultrassom</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 21cm; /* A4 width */
+            height: 9.8cm; /* Allow for 3 on a single A4 sheet */
+            padding: 5px;
+            border: 1px solid #000;
+            margin-bottom: 0.1cm;
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .header img {
+            max-width: 70px;
+            margin-left: 50px; /* Adjust this value to move the logo further right */
+            margin-right: 10px;
+        }
+        .header div {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header h1, .header h2 {
+            margin: 2px 0;
+            line-height: 1.2;
+            font-size: 11pt;
+            font-family: "Arial", sans-serif;
+        }
+        .header p {
+            margin: 2px 0;
+            line-height: 1.2;
+            font-size: 9pt;
+            font-family: "Arial", sans-serif;
+        }
+        .content h2 {
+            text-align: center;
+            margin: 5px 0;
+            font-size: 10pt;
+            font-family: "Arial", sans-serif;
+        }
+        .content p {
+            margin: 2px 0;
+            line-height: 1.2;
+            font-size: 10pt;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .separator {
+            border-top: 1px solid #000;
+            margin: 5px 0;
+        }
+        @media print {
+            body, .container {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../../assets/img/logo.png" alt="Logo">
+            <div>
+                <h1>PREFEITURA MUNICIPAL DE BANDEIRA DO SUL</h1>
+                <h2>SECRETARIA MUNICIPAL DE SAÚDE</h2>
+                <p>Rua João Botelho Muniz, 71, Centro – BANDEIRA DO SUL – (35) 3742-1291 / (35) 991840143</p>
+            </div>
+        </div>
+        <div class="content">
+            <h2>AGENDAMENTO DE ULTRASSOM</h2>
+            <div class="separator"></div>
+            <p><span class="bold">Paciente:</span> ${NomePaciente} &nbsp;&nbsp;&nbsp; <span class="bold">Idade:</span> ${Idade} &nbsp;&nbsp;&nbsp; <span class="bold">Sexo:</span> ${Sexo} &nbsp;&nbsp;&nbsp;<span class="bold">CNS:</span> ${cns}</p>
+            <p><span class="bold">Médico Solicitante:</span> ${NomeMedico}</p>
+            <p><span class="bold">Data e Horário:</span> ${DataHorario}</p>
+            <p><span class="bold">Tipo de Ultrassom:</span> ${tipoprocedimento}</p>
+            <p><span class="bold">Local de Atendimento:</span> ESF I Saúde de Mulher - Referência: AO LADO DO HOSPITAL</p>
+            <div class="separator"></div>
+            <p><span class="bold">Orientações:</span> ${orientacao}</p>
+        </div>
+    </div>
+</body>
+</html>
