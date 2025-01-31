@@ -1,0 +1,171 @@
+/* Animação de fade-in para os blocos */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animação de fade-in ao carregar a página */
+@keyframes fadeInPage {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Aplica a animação de fade-in ao conteúdo */
+.content-wrapper {
+    animation: fadeInPage 0.8s ease-in-out;
+}
+
+/* Efeito hover e transição suave em todos os elementos */
+.small-box, .small-box-footer, .small-box .icon {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos para os blocos */
+.small-box {
+    position: relative;  /* Posicionamento relativo para os ícones */
+    min-height: 150px;   /* Altura mínima dos blocos */
+    overflow: hidden;    /* Impede transbordamento de elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Efeito hover nos blocos */
+.small-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Sombra ao passar o mouse */
+    transform: translateY(-5px);  /* Leve elevação */
+}
+
+/* Estilo dos títulos dentro dos blocos */
+.small-box .inner h3 {
+    font-size: 26px;  /* Tamanho maior dos títulos */
+    font-weight: 700; /* Títulos mais fortes */
+    margin-bottom: 10px; /* Espaçamento entre título e descrição */
+    color: #fff;  /* Cor branca */
+}
+
+/* Estilo das descrições dentro dos blocos */
+.small-box .inner p {
+    font-size: 16px;
+    color: #f5f5f5; /* Cor clara para contraste */
+}
+
+/* Efeito hover nos títulos */
+.small-box:hover h3 {
+    color: #f5f5f5; /* Clareia o título ao passar o mouse */
+}
+
+/* Ajustes nas cores de fundo dos blocos */
+.small-box.bg-success {
+    background-color: #28a745;  /* Cor verde clara */
+}
+
+.small-box.bg-primary {
+    background-color: #007bff;  /* Azul */
+}
+
+.small-box.bg-warning {
+    background-color: #ffc107;  /* Amarelo */
+}
+
+.small-box.bg-danger {
+    background-color: #dc3545;  /* Vermelho */
+}
+
+/* Posicionamento e estilo dos ícones */
+.small-box .icon {
+    position: absolute;
+    top: 50%;  /* Centraliza verticalmente */
+    right: 45px;  /* Margem à direita */
+    transform: translateY(-80%);  /* Centraliza o ícone */
+    font-size: 45px;  /* Tamanho grande dos ícones */
+    color: rgba(255, 255, 255, 0.3);  /* Transparência leve */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Efeito hover nos ícones */
+.small-box:hover .icon {
+    transform: translateY(-50%) scale(1.1);  /* Aumenta o ícone ao passar o mouse */
+    color: rgba(255, 255, 255, 0.6);  /* Reduz a transparência no hover */
+}
+
+/* Estilo para os links no footer (botões de ação) */
+.small-box-footer {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo leve */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;  /* Bordas arredondadas */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Efeito hover nos links */
+.small-box-footer:hover {
+    background-color: rgba(0, 0, 0, 0.2);  /* Fundo mais escuro no hover */
+    color: #eaeaea;  /* Cor do texto no hover */
+}
+
+/* Responsividade para ajustar os tamanhos em telas menores */
+@media (max-width: 768px) {
+    .small-box .inner h3 {
+        font-size: 22px; /* Reduz o tamanho do título */
+    }
+
+    .small-box .inner p {
+        font-size: 14px; /* Reduz o tamanho da descrição */
+    }
+
+    .small-box .icon {
+        font-size: 50px;  /* Reduz o tamanho dos ícones em telas menores */
+    }
+}
+
+
+
+
+
+
+
+/* Estilo para o ícone "X" no campo de entrada */
+.input-group .clearable-input {
+    position: relative;
+}
+
+/* O "X" para limpar o campo de entrada, inicialmente oculto */
+.input-group .clear-input {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    color: #999;
+}
+
+/* Mostrar o "X" apenas quando o mouse estiver sobre o campo */
+.input-group:hover .clear-input {
+    display: inline;
+}
+
+/* Mostrar o "X" se o campo estiver preenchido */
+.clearable-input input:not(:placeholder-shown) ~ .clear-input {
+    display: inline;
+}
+
+/*pagina inserir_solicitacao.php */
+
+
+
+.custom-calendar-icon {
+    font-size: 1.5rem; /* Aumenta o tamanho do ícone */
+}
+
+.input-group-text {
+    height: 100%; /* Garante que o ícone ocupe toda a altura do campo */
+    display: flex;
+    align-items: center;
+}
+
+
